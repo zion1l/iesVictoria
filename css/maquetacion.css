@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Helvetica Neue LT Std 45 Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Helvetica Neue LT Std 45 Light'), 
+    url('../fuente/HelveticaNeueLTStd Lt.woff') 
+    format('woff');
+}
+html{
+	height: 100%
+}
+body{
+	height: 100%;
+	background-color:white;
+	font-family: "Helvetica Neue LT Std 45 Light";
+	overflow-y: hidden;
+}
+
+.vertical-center {
+  min-height: 100%; /
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  background: none;
+}
+.logo {
+	padding-bottom: 20px;
+	float: left;
+}
+.titulo{
+	float: left;
+	color: #555;
+	margin-left: 10px;
+}
+.btn-primary{
+	background-color: #ff4d4d;
+	color: white;
+	border: none;
+}
+.btn-primary:hover{
+	background-color: #d35454;
+	color: white;
+}
+.input-group-addon{
+	min-width: 40px;
+}
+.fa{
+	color: #ff4d4d;
+}
+.input-group-addon{
+	background-color: #fccfcf;
+}
+.form-group{
+	border-color: #ff4d4d;
+}
