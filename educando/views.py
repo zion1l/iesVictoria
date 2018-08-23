@@ -26,7 +26,7 @@ def ingresar(request):
             if acceso is not None:
                 if acceso.is_active:
                     login(request, acceso)
-                    return HttpResponseRedirect('/usuarios/privado')
+                    return HttpResponseRedirect('/usuarios/privado_admin')
                 else:
                     return render(request, 'educando/noactivo.html')
             else: return render(request, 'educando/nousuario.html')
@@ -34,6 +34,6 @@ def ingresar(request):
     return render(request, 'educando/ingresar.html', {'formulario':formulario})
 
 @login_required(login_url='educando/ingresar')
-def privado(request):
+def privado_admin(request):
     usuario= request.user
-    return render(request, 'educando/privado.html', {'usuario':usuario})
+    return render(request, 'educando/privado_admin.html', {'usuario':usuario})
