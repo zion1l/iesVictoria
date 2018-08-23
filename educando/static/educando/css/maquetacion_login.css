@@ -1,34 +1,51 @@
+
 html{
 	height: 100%
 }
 body{
 	height: 100%;
 	background-color:white;
+
 	overflow-y: hidden;
-
-}
-.container{
-    display: flex;
-	justify-content: center;
-}
-.div-flogin{
-
-}
-.formulario-login{
-    margin-bottom: 0px;
-}
-.formulario-login p{
-    margin-bottom: 0px;
 }
 .vertical-center {
   min-height: 100%; /
-  min-height: 100vh;
+  min-height: 100vh; 
   display: flex;
   align-items: center;
   background: none;
 }
-.boton-ingresar{
-display: flex;
-justify-content: center;
-margin: auto;
+.titulo{
+	float: left;
+	color: #555;
+	margin-left: 10px;
+}
+#formulario input{
+    width: 100%;
+}
+.btn-primary{
+	background-color: #ff4d4d;
+	color: white;
+	border: none;
+}
+.btn-primary:hover{
+	background-color: #d35454;
+	color: white;
+}
+.input-group-addon{
+	min-width: 40px;
+}
+.fa{
+	color: #ff4d4d;
+}
+.input-group-addon{
+	background-color: #fccfcf;
+}
+.form-group{
+	border-color: #ff4d4d;
+}
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }

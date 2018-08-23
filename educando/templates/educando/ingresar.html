@@ -3,22 +3,43 @@
 {% block css %}
     <link rel="stylesheet" href="{% static 'educando/css/maquetacion_login.css' %}">
 {% endblock %}
-
+{% block js %}
+    <script src="{% static 'educando/js/maquetacion_login.js' %}" ></script>
+{% endblock %}
 
 {% block contenido %}
-<div class="container vertical-center">
+<div class="jumbotron vertical-center">
+<div class="container">
 
-    <div class="div-flogin">
-        <div class="titulo-ingresar">
-            Educando
-        </div>
-        <form class="formulario-login" id="formulario" method="post" action="">
-            {% csrf_token %}
-            <table>{{formulario}}</table>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<div class="titulo">
+						<h2>IES Victoria</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<form class="formulario" id="formulario" method="post" action="">
+						{% csrf_token%}
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+								{{formulario.username}}
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+								{{formulario.password}}
+							</div>
+						</div>
 
-            <button type="submit" class="boton-ingresar">Entrar</button>
-        </form>
-    </div>
+						<button type="submit" class="btn btn-primary center-block">Entrar</button>
+					</form>
+				</div>
+			</div>
+		</div>
 </div>
 
 {% endblock %}
