@@ -1,0 +1,13 @@
+
+/*MODALS*/
+.row-header{
+    padding: 0px 20px;
+}
+#create_user .fa-user{
+    font-size: 20px;
+    float: left;
+    margin-right: 20px;
+}
+#create_user .modal-title{
+    float: left;
+}
