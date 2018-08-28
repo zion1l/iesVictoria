@@ -9,9 +9,9 @@ from django.http import HttpResponseRedirect
 def nuevo_usuario(request):
     if request.method=='POST':
         formulario = UserCreationForm(request.POST)
-        if formulario.is_valid:
+        if formulario.is_valid():
             formulario.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/usuarios/privado_admin/')
     else:
         formulario = UserCreationForm()
     return render(request,'educando/usuario.html', {'formulario':formulario})
@@ -19,7 +19,7 @@ def nuevo_usuario(request):
 def ingresar(request):
     if request.method == 'POST':
         formulario = AuthForm(request.POST)
-        if formulario.is_valid:
+        if formulario.is_valid():
             usuario = request.POST['username']
             clave = request.POST['password']
             acceso = authenticate(username=usuario, password=clave)
