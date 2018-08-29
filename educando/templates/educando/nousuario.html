@@ -1,4 +1,33 @@
-{% extends 'educando/base.html'%}
-{% block titulo %}Error de acceso{% endblock %}
-{% block encabezado %}<h1>Error del acceso</h1>{% endblock %}
-{% block contenido %}<p>El usuario y la contraseña no coinciden o no existen</p>{% endblock %}
+{% load staticfiles%}
+<html>
+<head>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'educando/css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'educando/fonts/fontawesome-webfont.woff' %}">
+<link rel="stylesheet" href="{% static 'educando/fonts/fontawesome-webfont.woff2' %}">
+<link rel="stylesheet" href="{% static 'educando/fonts/fontawesome-webfont.ttf' %}">
+	<link rel="stylesheet" href="{% static 'educando/css/maquetacion_login.css' %}">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="{% static 'educando/js/maquetacion_login.js' %}" ></script>
+</head>
+<body>
+<div class="jumbotron vertical-center">
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="nouser">
+                <h2>Error de acceso</h2>
+                <h3>El usuario y la contraseña no coinciden o no existen</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</body>
+</html>
+
+

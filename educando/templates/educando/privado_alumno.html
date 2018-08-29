@@ -1,0 +1,32 @@
+{% extends 'educando/base.html'%}
+{% load staticfiles%}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'educando/css/maquetacion_profesores_alumnos.css' %}">
+{% endblock %}
+{% block js %}
+{% endblock %}
+
+{% block contenido %}
+    <body>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">IES Victoria</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="selected"><a href="#">Inicio</a></li>
+                    <li><a href="#">Notas</a></li>
+                    <li><a href="#">Agenda</a></li>
+                    <li><a href="#">Mensajes</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-user"></i> {{usuario}}</a></li>
+                    <li><a href="{% url 'ingresar' %}"><i class="fa fa-sign-out"></i> Salir</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </body>
+
+{% endblock %}
