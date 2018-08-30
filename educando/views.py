@@ -45,6 +45,14 @@ def ingresar(request):
             return render(request, 'educando/ingresar.html', {'formulario': formulario})
     return render(request, 'educando/ingresar.html', {'formulario':formulario})
 
+def agenda_base(request):
+    usuario= request.user
+    return render(request, 'educando/agenda_base.html', {'usuario':usuario})
+
+def notas_alumnos(request):
+    usuario= request.user
+    return render(request, 'educando/notas_alumnos.html', {'usuario':usuario})
+
 @login_required(login_url='educando/ingresar')
 def privado_admin(request):
     formulario = UserCreationForm()
@@ -60,3 +68,4 @@ def privado_alumno(request):
 def privado_profesor(request):
     usuario= request.user
     return render(request, 'educando/privado_profesor.html', {'usuario':usuario})
+

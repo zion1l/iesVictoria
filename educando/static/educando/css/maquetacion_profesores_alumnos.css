@@ -7,12 +7,33 @@ body{
 	overflow-y: hidden;
 	font-family: 'Raleway', sans-serif;
 }
+.vertical-center {
+  height: 80%; /
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: none;
+}
+.container-fluid{
+    width: 100%;
+}
 
 /*NAVBAR*/
 .navbar{
     padding: 10px 0px;
+    border:0px;
+    border-left: 20px solid #338a9b;
+    background-color: #edfcff;
+    height: 80px;
 }
 .selected{
     border-radius: 20px;
-    background-color: #fccfcf;
+    border-bottom: 2px solid #338a9b;
+    border-right: 2px solid #338a9b;
+}
+.navbar-right>li>a:hover{
+    text-decoration: underline;
+}
+.navbar .fa{
+    margin-right: 5px;
 }

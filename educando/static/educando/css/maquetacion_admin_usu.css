@@ -1,3 +1,42 @@
+html{
+	height: 100%
+}
+body{
+	height: 100%;
+	background-color:white;
+	overflow-y: hidden;
+	font-family: 'Raleway', sans-serif;
+}
+.vertical-center {
+  height: 80%; /
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: none;
+}
+.container-fluid{
+    width: 100%;
+}
+
+/*NAVBAR*/
+.navbar{
+    padding: 10px 0px;
+    border:0px;
+    border-left: 20px solid #338a9b;
+    background-color: #edfcff;
+    height: 80px;
+}
+.selected{
+    border-radius: 20px;
+    border-bottom: 2px solid #338a9b;
+    border-right: 2px solid #338a9b;
+}
+.navbar-right>li>a:hover{
+    text-decoration: underline;
+}
+.navbar .fa{
+    margin-right: 5px;
+}
 /*MODALS*/
 .row-header{
     padding: 0px 20px;
@@ -9,4 +48,41 @@
 }
 #create_user .modal-title{
     float: left;
+}
+/*PERFIL-BUTTON*/
+.perfil-button{
+    display: flex;
+    justify-content: center;
+}
+.perfil-button button{
+    height: 55%;
+    width: 70%;
+    border-radius: 80px;
+}
+.teacher{
+    background: url("/static/educando/img/profesor.jpg");
+    background-size: cover;
+    opacity: 0.75;
+}
+.children{
+    background: url("/static/educando/img/alumnos.jpg");
+    background-size: cover;
+    opacity: 0.75;
+}
+.teacher p, .children p{
+    float: left;
+    position: absolute;
+    top: 30;
+    margin-left: 20px;
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #CCCCCC;
+    opacity: 1!important;
+
+}
+.teacher:hover, .children:hover{
+    opacity: 1;
+}
+button:focus{
+    outline: none;
 }
