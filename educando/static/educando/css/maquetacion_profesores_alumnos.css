@@ -37,3 +37,40 @@ body{
 .navbar .fa{
     margin-right: 5px;
 }
+/*SUBJECT BUTTON*/
+.perfil-button{
+    display: flex;
+    justify-content: center;
+}
+.perfil-button button{
+    height: 55%;
+    width: 70%;
+    border-radius: 80px;
+}
+.teacher{
+    background: url("/static/educando/img/profesor.jpg");
+    background-size: cover;
+    opacity: 0.75;
+}
+.children{
+    background: url("/static/educando/img/alumnos.jpg");
+    background-size: cover;
+    opacity: 0.75;
+}
+.teacher p, .children p{
+    float: left;
+    position: absolute;
+    top: 30;
+    margin-left: 20px;
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #CCCCCC;
+    opacity: 1!important;
+
+}
+.teacher:hover, .children:hover{
+    opacity: 1;
+}
+button:focus{
+    outline: none;
+}

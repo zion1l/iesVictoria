@@ -80,7 +80,7 @@ body{
     opacity: 1!important;
 
 }
-.teacher:hover, .children:hover{
+.perfil-button button:hover{
     opacity: 1;
 }
 button:focus{
