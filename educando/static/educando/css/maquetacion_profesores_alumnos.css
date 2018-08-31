@@ -4,7 +4,6 @@ html{
 body{
 	height: 100%;
 	background-color:white;
-	overflow-y: hidden;
 	font-family: 'Raleway', sans-serif;
 }
 .vertical-center {
@@ -16,6 +15,7 @@ body{
 }
 .container-fluid{
     width: 100%;
+    height: 100%;
 }
 
 /*NAVBAR*/
@@ -38,37 +38,68 @@ body{
     margin-right: 5px;
 }
 /*SUBJECT BUTTON*/
-.perfil-button{
+.subject-button{
     display: flex;
     justify-content: center;
 }
-.perfil-button button{
-    height: 55%;
+.subject-button button{
+    height: 30vh;
     width: 70%;
     border-radius: 80px;
+    margin: 20px 0px;
 }
-.teacher{
-    background: url("/static/educando/img/profesor.jpg");
+.subject{
     background-size: cover;
     opacity: 0.75;
 }
-.children{
-    background: url("/static/educando/img/alumnos.jpg");
+.biology{
+    background: url("/static/educando/img/biologia.jpg");
     background-size: cover;
-    opacity: 0.75;
 }
-.teacher p, .children p{
+.physical-education{
+    background: url("/static/educando/img/educacion_fisica.jpg");
+    background-size: cover;
+}
+.ethics{
+    background: url("/static/educando/img/etica.png");
+    background-size: cover;
+}
+.geography{
+    background: url("/static/educando/img/geografia.jpg");
+    background-size: cover;
+}
+.english{
+    background: url("/static/educando/img/ingles.jpg");
+    background-size: cover;
+}
+.literature{
+    background: url("/static/educando/img/literatura.jpg");
+    background-size: cover;
+}
+.maths{
+    background: url("/static/educando/img/matematicas.jpg");
+    background-size: cover;
+}
+.technology{
+    background: url("/static/educando/img/tecnologia.jpg");
+    background-size: cover;
+}
+
+.subject p{
     float: left;
     position: absolute;
     top: 30;
     margin-left: 20px;
     color: white;
     font-size: 40px;
-    text-shadow: 2px 2px 4px #CCCCCC;
     opacity: 1!important;
+    border-radius: 40px;
+    background-color: #338a9b;
+    padding: 10px;
+
 
 }
-.teacher:hover, .children:hover{
+.subject:hover{
     opacity: 1;
 }
 button:focus{

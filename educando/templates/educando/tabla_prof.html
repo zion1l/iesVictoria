@@ -1,0 +1,110 @@
+{% extends 'educando/base.html'%}
+{% load staticfiles%}
+{% block css %}
+
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="{% static 'educando/css/maquetacion_admin_usu.css' %}">
+{% endblock %}
+{% block js %}
+<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="{% static 'educando/js/maquetacion_admin.js' %}"></script>
+{% endblock %}
+
+{% block contenido %}
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">IES Victoria</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="selected"><a href="#">Inicio</a></li>
+                <li><a href="{% url 'agenda_base' %}">Agenda</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><i class="fa fa-user"></i> {{usuario}}</a></li>
+                <li><a href="{% url 'ingresar' %}"><i class="fa fa-sign-out"></i> Salir</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron vertical-center">
+      <div class="container-fluid container-buttons">
+          <div class="row">
+              <table id="proffesor_table" class="display">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Nombre de usuario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Apellido</td>
+                            <td>Nombre de usuario</td>
+                        </tr>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Apellido</td>
+                            <td>Nombre de usuario</td>
+                        </tr>
+                    </tbody>
+                </table>
+          </div>
+
+      </div>
+    </div>
+<!-- Modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_user">
+      Añadir profesor
+    </button>
+    <div class="modal fade" id="create_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="row row-header">
+              <i class="fa fa-user"></i> <h4 class="modal-title" id="exampleModalLabel">Añadir profesor</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+            </div>
+          <div class="modal-body">
+            <form id="formulario" method="post" action="{% url 'nuevo_profesor' %}">
+                 {% csrf_token %}
+                <div class="form-group">
+                    <label class="control-label"> Nombre de usuario: </label>
+                    {{formulario.username}}
+                </div>
+                <div class="form-group">
+                    <label class="control-label"> Contraseña: </label>
+                    {{formulario.password1}}
+                </div>
+                <div class="form-group">
+                    <label class="control-label"> Confirmar contraseña: </label>
+                    {{formulario.password2}}
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Nombre: </label>
+                    {{formulario.first_name}}
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Apellidos: </label>
+                    {{formulario.last_name}}
+                </div>
+
+                <p><input id="registrar" class="clase" type="submit" value="Registrar"></p>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+
+{% endblock %}

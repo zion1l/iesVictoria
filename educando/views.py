@@ -5,6 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from educando.forms import *
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 
@@ -45,6 +46,29 @@ def ingresar(request):
             return render(request, 'educando/ingresar.html', {'formulario': formulario})
     return render(request, 'educando/ingresar.html', {'formulario':formulario})
 
+def tabla_prof(request):
+    formulario = CreateForm()
+    usuario = request.user
+    return render(request, 'educando/tabla_prof.html', {'usuario': usuario, 'formulario':formulario})
+
+def nuevo_profesor(request):
+    print(request.method)
+    formulario = CreateForm()
+    if request.method=='POST':
+        formulario = CreateForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return HttpResponseRedirect('/usuarios/nuevo_profesor/')
+        else:
+            print(formulario.errors)
+            return HttpResponseRedirect('/usuarios/nuevo_profesor/')
+    else:
+        return render(request,'educando/tabla_prof.html/', {'formulario':formulario} )
+
+def tabla_alumnos(request):
+    usuario = request.user
+    return render(request, 'educando/tabla_alumnos.html', {'usuario': usuario})
+
 def agenda_base(request):
     usuario= request.user
     return render(request, 'educando/agenda_base.html', {'usuario':usuario})
@@ -55,9 +79,9 @@ def notas_alumnos(request):
 
 @login_required(login_url='educando/ingresar')
 def privado_admin(request):
-    formulario = UserCreationForm()
+
     usuario= request.user
-    return render(request, 'educando/privado_admin.html', {'usuario':usuario, 'formulario':formulario})
+    return render(request, 'educando/privado_admin.html', {'usuario':usuario})
 
 @login_required(login_url='educando/ingresar')
 def privado_alumno(request):
@@ -69,3 +93,9 @@ def privado_profesor(request):
     usuario= request.user
     return render(request, 'educando/privado_profesor.html', {'usuario':usuario})
 
+
+@login_required(login_url='/educando/ingresar')
+@csrf_exempt
+def cerrar_sesion(request):
+    logout(request)
+    return HttpResponseRedirect('/educando/ingresar')

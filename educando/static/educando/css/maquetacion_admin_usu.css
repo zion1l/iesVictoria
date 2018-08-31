@@ -4,7 +4,6 @@ html{
 body{
 	height: 100%;
 	background-color:white;
-	overflow-y: hidden;
 	font-family: 'Raleway', sans-serif;
 }
 .vertical-center {
@@ -16,6 +15,7 @@ body{
 }
 .container-fluid{
     width: 100%;
+    height: 100%;
 }
 
 /*NAVBAR*/
@@ -55,7 +55,7 @@ body{
     justify-content: center;
 }
 .perfil-button button{
-    height: 55%;
+    height: 55vh;
     width: 70%;
     border-radius: 80px;
 }
