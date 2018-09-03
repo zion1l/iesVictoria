@@ -19,25 +19,25 @@ body{
 	color: #555;
 }
 .btn-primary{
-	background-color: #ff4d4d;
+	background-color: #338a9b;
 	color: white;
 	border: none;
 }
 .btn-primary:hover{
-	background-color: #d35454;
+	background-color: #275760;
 	color: white;
 }
 .input-group-addon{
 	min-width: 40px;
 }
 .fa{
-	color: #ff4d4d;
+	color: #338a9b;
 }
 .input-group-addon{
-	background-color: #fccfcf;
+	background-color: #edfcff;
 }
 .form-group{
-	border-color: #ff4d4d;
+	border-color: #338a9b;
 }
 .center-block {
     display: block;

@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^notas_alumnos/$', views.notas_alumnos, name='notas_alumnos'),
     url(r'^tabla_prof/$', views.tabla_prof, name='tabla_prof'),
     url(r'^tabla_alumnos/$', views.tabla_alumnos, name='tabla_alumnos'),
+    url(r'^notas_recursos_alumnos/$', views.notas_recursos_alumnos, name='notas_recursos_alumnos'),
+
 ]

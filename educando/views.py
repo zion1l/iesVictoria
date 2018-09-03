@@ -77,6 +77,10 @@ def notas_alumnos(request):
     usuario= request.user
     return render(request, 'educando/notas_alumnos.html', {'usuario':usuario})
 
+def notas_recursos_alumnos(request):
+    usuario= request.user
+    return render(request, 'educando/notas_recursos_alumnos.html', {'usuario':usuario})
+
 @login_required(login_url='educando/ingresar')
 def privado_admin(request):
 

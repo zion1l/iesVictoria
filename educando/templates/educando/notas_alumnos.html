@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{% static 'educando/css/maquetacion_profesores_alumnos.css' %}">
 {% endblock %}
 {% block js %}
+<script src="{% static 'educando/js/maquetacion_alumnos.js' %}"></script>
 {% endblock %}
 
 {% block contenido %}
@@ -16,8 +17,8 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="{% url 'privado_alumno' %}">Inicio</a></li>
-                    <li class="selected"><a href="{% url 'notas_alumnos' %}">Notas</a></li>
-                    <li><a href="#">Recursos</a></li>
+                    <li class="selected"><a href="{% url 'notas_alumnos' %}">Asignaturas</a></li>
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><i class="fa fa-user"></i> {{usuario}}</a></li>
@@ -29,13 +30,13 @@
           <div class="container-fluid container-buttons">
               <div class="row">
                   <div class="col-md-3 subject-button">
-                      <button class="subject biology">
+                      <button class="subject biology" data-href="{% url 'notas_recursos_alumnos' %}">
                           <p>Biología</p>
                       </button>
                   </div>
                   <div class="col-md-3 subject-button">
                       <button class="subject physical-education" data-href="">
-                          <p>Educación <br>Física</p>
+                          <p>Educación Física</p>
                       </button>
                   </div>
                   <div class="col-md-3 subject-button">

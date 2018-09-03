@@ -15,8 +15,8 @@
                     <a class="navbar-brand" href="#">IES Victoria</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="selected"><a href="#">Inicio</a></li>
-                    <li><a href="{% url 'notas_alumnos' %}">Asignaturas</a></li>
+                    <li><a href="{% url 'privado_alumno' %}">Inicio</a></li>
+                    <li class="selected"><a href="{% url 'notas_alumnos' %}">Asignaturas</a></li>
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -25,7 +25,20 @@
                 </ul>
             </div>
         </nav>
+        <div class="container-fluid">
+            <div class="row title-marks">
+                <p> Notas</p>
+            </div>
+            <div class="row table-marks">
 
+            </div>
+            <div class="row title-files">
+                <p> Recursos</p>
+            </div>
+            <div class="row container-files">
+
+            </div>
+        </div>
     </body>
 
 {% endblock %}
