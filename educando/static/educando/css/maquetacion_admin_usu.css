@@ -86,3 +86,18 @@ body{
 button:focus{
     outline: none;
 }
+/*BOTONES*/
+.btn-primary{
+	background-color: #338a9b;
+	color: white;
+	border: none;
+}
+.btn-primary:hover{
+	background-color: #275760;
+	color: white;
+}
+/*FOOTER*/
+.footer .row{
+    display: flex;
+    justify-content:center;
+}

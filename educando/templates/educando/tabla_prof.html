@@ -1,9 +1,9 @@
 {% extends 'educando/base.html'%}
 {% load staticfiles%}
 {% block css %}
-
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="{% static 'educando/css/maquetacion_admin_usu.css' %}">
+<link rel="stylesheet" href="{% static 'educando/css/maquetacion_datatable.css' %}">
 {% endblock %}
 {% block js %}
 <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -55,10 +55,15 @@
 
       </div>
     </div>
+    <footer class="footer container">
+        <div class="row">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_user">
+              Añadir profesor
+            </button>
+        </div>
+    </footer>
+
 <!-- Modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_user">
-      Añadir profesor
-    </button>
     <div class="modal fade" id="create_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -103,7 +108,26 @@
         </div>
       </div>
     </div>
+<script>
+	var message = "";
+	{% if messages %}
 
+		{% for message in messages %}
+			message = "{{ message }}"
+		{% endfor %}
+
+		$.notify({
+		 message: 	message
+		},{
+		  type: 'danger',
+		  placement: {
+			from: "bottom",
+			align: "right"
+		  },
+		  z_index: 10000,
+		});
+	{% endif %}
+</script>
 </body>
 
 

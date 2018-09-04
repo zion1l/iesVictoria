@@ -7,5 +7,25 @@
 {% endblock %}
 
 {% block contenido %}
-PRIVADO PROFESOR
+    <body>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">IES Victoria</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="selected"><a href="#">Inicio</a></li>
+                    <li><a href="{% url 'notas_alumnos' %}">Asignaturas</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-user"></i> {{usuario}}</a></li>
+                    <li><a href="{% url 'ingresar' %}"><i class="fa fa-sign-out"></i> Salir</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </body>
+
 {% endblock %}

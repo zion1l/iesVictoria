@@ -11,3 +11,12 @@ class CreateForm(UserCreationForm):
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+    def clean(self):
+        super(CreateForm, self).clean()
+
+        password1 = self.cleaned_data.get("password1")
+        password2 = self.cleaned_data.get("password2")
+        if password1:
+            if password1 != password2:
+                self._errors['password1'] = self.error_class(['Las contraseñas introducidas deben ser iguales'])

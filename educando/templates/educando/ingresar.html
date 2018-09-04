@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="{% static 'educando/css/maquetacion_login.css' %}">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="{% static 'educando/js/maquetacion_login.js' %}" ></script>
+<script src="{% static 'educando/js/bootstrap-notify.min.js' %}" ></script>
+<script src="{% static 'educando/js/maquetacion_login.js' %}" ></script>
 </head>
 <body>
 <div class="jumbotron vertical-center">
@@ -42,14 +43,26 @@
 				</div>
 			</div>
 		</div>
+<script>
+	var message = "";
+	{% if messages %}
 
-{% if messages %}
-		<div class="row">
-			{% for message in messages %}
-				{{ message }}
-			{% endfor %}
-		</div>
+		{% for message in messages %}
+			message = "{{ message }}"
+		{% endfor %}
+
+		$.notify({
+		 message: 	message
+		},{
+		  type: 'danger',
+		  placement: {
+			from: "bottom",
+			align: "right"
+		  },
+		  z_index: 10000,
+		});
 	{% endif %}
+</script>
 </div>
 </body>
 

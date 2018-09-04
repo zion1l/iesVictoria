@@ -1,9 +1,13 @@
 {% extends 'educando/base.html'%}
 {% load staticfiles%}
 {% block css %}
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="{% static 'educando/css/maquetacion_profesores_alumnos.css' %}">
+    <link rel="stylesheet" href="{% static 'educando/css/maquetacion_datatable.css' %}">
 {% endblock %}
 {% block js %}
+    <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="{% static 'educando/js/maquetacion_alumnos.js' %}"></script>
 {% endblock %}
 
 {% block contenido %}
@@ -26,19 +30,55 @@
             </div>
         </nav>
         <div class="container-fluid">
-            <div class="row title-marks">
-                <p> Notas</p>
+            <div class="marks">
+                <div class="row title-marks">
+                    <div class="col-md-12">
+                        <p class="h3">Notas</p>
+                    </div>
+                </div>
+                <div class="row table-marks">
+                    <div class="col-md-10 col-md-offset-1">
+                        <table id="marks_table" class="display">
+                        <thead>
+                            <tr>
+                                <th>Categoría</th>
+                                <th>Comentario</th>
+                                <th>Nota</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Trabajo</td>
+                                <td>Comentario aleatorio</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>Examen</td>
+                                <td>Comentario aleatorio</td>
+                                <td>8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
             </div>
-            <div class="row table-marks">
+            <div class="files">
+                <div class="row title-files">
+                    <div class="col-md-12">
+                        <p class="h3">Recursos</p>
+                    </div>
+                </div>
+                <div class="row container-files">
+                    <div class="col-md-10 col-md-offset-1">
 
-            </div>
-            <div class="row title-files">
-                <p> Recursos</p>
-            </div>
-            <div class="row container-files">
-
+                    </div>
+                </div>
             </div>
         </div>
     </body>
 
 {% endblock %}
+
+
+
+

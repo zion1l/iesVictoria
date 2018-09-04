@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from educando.models import *
 
 def nuevo_usuario(request):
     if request.method=='POST':
@@ -42,7 +43,7 @@ def ingresar(request):
             else:
                 return render(request, 'educando/nousuario.html')
         else:
-            messages.add_message(request, messages.ERROR, 'Usuario y contraseña no coinciden')
+            messages.add_message(request, messages.ERROR, 'El usuario y la contraseña no coinciden')
             return render(request, 'educando/ingresar.html', {'formulario': formulario})
     return render(request, 'educando/ingresar.html', {'formulario':formulario})
 
@@ -60,7 +61,15 @@ def nuevo_profesor(request):
             formulario.save()
             return HttpResponseRedirect('/usuarios/nuevo_profesor/')
         else:
-            print(formulario.errors)
+            if 'The password is too similar' in formulario.errors['password2'][0]:
+                messages.add_message(request, messages.ERROR, 'La contraseña es muy similar al nombre de usuario')
+            elif 'This password is too common' in formulario.errors['password2'][0]:
+                messages.add_message(request, messages.ERROR, 'La contraseña es muy común')
+            elif 'The two password fields' in formulario.errors['password2'][0]:
+                messages.add_message(request, messages.ERROR, 'Las contraseñas tienen que ser iguales')
+            elif 'This password is too short.' in formulario.errors['password2'][0]:
+                messages.add_message(request, messages.ERROR, 'La contraseña es demasiado corta. Debe contener al menos 8 caracteres')
+
             return HttpResponseRedirect('/usuarios/nuevo_profesor/')
     else:
         return render(request,'educando/tabla_prof.html/', {'formulario':formulario} )
@@ -75,7 +84,9 @@ def agenda_base(request):
 
 def notas_alumnos(request):
     usuario= request.user
-    return render(request, 'educando/notas_alumnos.html', {'usuario':usuario})
+    asignaturas = Asignaturas.objects.all()
+    return render(request, 'educando/notas_alumnos.html', {'usuario':usuario, 'asignaturas':asignaturas})
+
 
 def notas_recursos_alumnos(request):
     usuario= request.user
