@@ -15,8 +15,8 @@ class Asignaturas(models.Model):
     nombre = models.CharField(max_length=50)
 
 #class Notas(models.Model):
- #   modulo = models.ChoiceeField(choices=(('deberes','Deberes'),('trabajos','Trabajos'),('examenes','Exámenes')))
-  #  fecha = models.DateField()
-   # comentario = models.CharField(max_length=200)
-    #nota = models.FloatField()
-    #trimestre = models.ChoiceField(choices=(('1','Primero'),('2','Segundo'),('3','Tercero')))
+#   modulo = models.ChoiceeField(choices=(('deberes','Deberes'),('trabajos','Trabajos'),('examenes','Exámenes')))
+#   fecha = models.DateField()
+#   comentario = models.CharField(max_length=200)
+#   nota = models.FloatField()
+#   trimestre = models.ChoiceField(choices=(('1','Primero'),('2','Segundo'),('3','Tercero')))
